@@ -1,18 +1,12 @@
-// functions destructurisation
-
-const myStrat = {
-  brand: "fender",
-  year: 2007,
-  color: "3 TBS",
-  humbuckers: 1,
-  usaMade: true,
-};
-
-const stratInfo = ({ brand, humbuckers }) => {
-  if (!humbuckers) {
-    return `That  ${brand} guitar has no hums`;
+const posiSum = (a, b) => {
+  if (typeof a !== "number" || typeof b !== "number") {
+    return "One of the arguments is not a number ";
   }
-  return `That ${brand} guitar has ${humbuckers} hums`;
-};
 
-console.log(stratInfo(myStrat));
+  if (a <= 0 || b <= 0) {
+    return "One of the arguments is not positive";
+  }
+
+  return a + b;
+};
+posiSum("abc", -5);
