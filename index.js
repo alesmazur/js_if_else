@@ -1,29 +1,18 @@
-//object as funcs argument
+// functions destructurisation
 
-// with object mutation
-
-const personA = {
-  gender: "male",
-  age: 41,
-  weight: "72kg",
+const myStrat = {
+  brand: "fender",
+  year: 2007,
+  color: "3 TBS",
+  humbuckers: 1,
+  usaMade: true,
 };
 
-function increasePersonAge(somePerson) {
-  somePerson.age += 1;
-  return somePerson;
-}
+const stratInfo = ({ brand, humbuckers }) => {
+  if (!humbuckers) {
+    return `That  ${brand} guitar has no hums`;
+  }
+  return `That ${brand} guitar has ${humbuckers} hums`;
+};
 
-increasePersonAge(personA);
-console.log(personA);
-
-// without object mutation
-
-function ageIncreaser(somePerson) {
-  const splitedPerson = Object.assign({}, somePerson);
-  splitedPerson.age += 1;
-  return splitedPerson;
-}
-
-const splitedPersonA = ageIncreaser(personA);
-console.log(personA.age);
-console.log(splitedPersonA.age);
+console.log(stratInfo(myStrat));
